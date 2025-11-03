@@ -288,13 +288,20 @@ a:hover {
 .reveal.delay-2 { transition-delay: 0.2s; }
 .reveal.delay-3 { transition-delay: 0.3s; }
 /* Media Queries para Responsividade */
+/* Media Queries para Responsividade */
 @media (max-width: 1200px) {
+    
+     body{
+        padding: 16px;
+        size-adjust: calc(max-width);
+    }
     .galeria-trabalhos img {
         width: 30%; /* Ajuste para telas médias */
     }
 }
 
 @media (max-width: 992px) {
+
     .sobre-conteudo {
         gap: 30px;
     }
@@ -305,6 +312,7 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+    /* ... (Seus ajustes existentes para tablets e celulares) ... */
     .cabecalho {
         flex-direction: column;
         align-items: center;
@@ -338,8 +346,12 @@ a:hover {
     }
 
     .hero-texto .subtitulo {
-        top: -30px;
-        left: 10px;
+        /* Se o subtítulo estiver posicionado absolutamente, ele pode precisar de ajustes */
+        top: 0; /* Ajuste a posição, ou remova se a imagem está acima */
+        left: 0;
+        position: static; /* Mudar para estático é comum em telas pequenas */
+        text-align: center;
+        margin-top: 10px;
     }
 
     .sobre-conteudo {
@@ -366,5 +378,39 @@ a:hover {
 
     .projetos-titulo {
         font-size: clamp(1.5rem, 12vw, 4rem);
+    }
+}
+
+/** NOVO: AJUSTES FINAIS PARA SMARTPHONES MUITO PEQUENOS (ex: max-width: 480px) **/
+@media (max-width: 480px) {
+    body{
+        padding: 16px;
+        size-adjust: calc(max-width);
+    }
+    /* Navegação */
+    .menu-cabecalho a {
+        /* Espaçamento maior para facilitar o toque, ou forçar uma lista vertical */
+        display: block; /* Cada link em uma linha */
+        margin: 5px 0;
+        padding: 5px 0;
+    }
+
+    /* Imagens da Galeria */
+    .galeria-trabalhos img {
+        /* Força 1 imagem por linha para visibilidade máxima */
+        width: 90%; 
+        margin-bottom: 15px;
+    }
+
+    /* Textos Principais */
+    .titulo-principal {
+        /* Reduz o tamanho da fonte para não ocupar a tela toda */
+        font-size: clamp(1.5rem, 15vw, 3rem); 
+    }
+
+    /* Padding/Margem geral */
+    section {
+        /* Reduz o padding horizontal geral para aproveitar o espaço */
+        padding: 20px 5%;
     }
 }
