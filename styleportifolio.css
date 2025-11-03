@@ -89,11 +89,11 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    min-height: 120dvh;
+    min-height: 80dvh;
     padding-top: 120px;
     position: relative;
     overflow: hidden;
-    font-size: 7rem;
+    font-size: 8rem;
 }
 .hero-texto {
     z-index: 20; 
@@ -105,7 +105,7 @@ main {
     position: relative;
     top: -50px;
     left: 20px;
-    font-size: 9rem;
+    font-size: 8rem;
 }
 
 
